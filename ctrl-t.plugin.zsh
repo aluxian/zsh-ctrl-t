@@ -7,9 +7,9 @@ function ctrl-t-select() {
     tasks=$(jq '.scripts|keys[]' -rc package.json)
   fi
 
-	BUFFER=$(jq '.scripts|keys[]' -rc package.json | fzf --query "$LBUFFER")
+  BUFFER=$(jq '.scripts|keys[]' -rc package.json | fzf --query "$LBUFFER")
   BUFFER="npm run ${BUFFER}"
-	CURSOR=$#BUFFER
+  CURSOR=$#BUFFER
 	
   zle redisplay
 }
